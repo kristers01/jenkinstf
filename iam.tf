@@ -8,6 +8,7 @@ resource "aws_iam_role" "ec2_role" {
   assume_role_policy = file("ec2-assume.json")
 
   inline_policy {
+    //gives full access to s3, ecr, ec2
     name   = "ec2_policy"
     policy = file("ec2-policy.json")
   }
